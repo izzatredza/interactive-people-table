@@ -167,7 +167,7 @@
         let controls;
 
         const objects = [];
-        const targets = { table: [], sphere: [], helix: [], grid: [] };
+        const targets = { table: [], sphere: [], helix: [], grid: [], tetrahedron: [] };
 
         init();
         animate();
@@ -353,8 +353,8 @@
 
                 targets.grid.push( object );
             }
-            
-                        // --- TETRAHEDRON LAYOUT ---
+
+            // --- TETRAHEDRON LAYOUT ---
                 let layer = 0;
                 let objIndex = 0;
                 const spacing = 180; // Distance between cards
@@ -392,6 +392,7 @@
                     }
                     layer++;
                 }
+    
 
             // --- RENDERER & CONTROLS ---
 
@@ -418,7 +419,7 @@
             buttonGrid.addEventListener( 'click', function () { transform( targets.grid, 2000 ); } );
 
             const buttonTetra = document.getElementById('tetrahedron');
-            buttonTetra.addEventListener('click', function () { transform(targets.tetrahedron, 2000); } );
+            buttonTetra.addEventListener('click', function () { transform(targets.tetrahedron, 2000); } );            
 
             // Start in Table view
             transform( targets.table, 2000 );
@@ -473,5 +474,4 @@
 
     </script>
 </body>
-
 </html>
